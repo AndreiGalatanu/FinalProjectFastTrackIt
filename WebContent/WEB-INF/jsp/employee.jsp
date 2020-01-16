@@ -1,38 +1,89 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="ISO-8859-1">
 <title>SQL Employees</title>
+<style>
+table {
+	font-family: arial, sans-serif;
+	border-collapse: collapse;
+	width: 50%;
+	margin-left: 25%;
+	margin-right: 25%;
+}
+
+td, th {
+	border: 1px solid #dddddd;
+	text-align: left;
+	padding: 4px;
+}
+
+tr:nth-child(even) {
+	background-color: #dddddd;
+}
+
+#button {
+	width: 2px;
+	text-align: center;
+}
+
+#firstTable {
+	text-align: center;
+}
+
+h2 {
+	text-align: center;
+}
+
+.footer {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	text-align: center;
+}
+</style>
 </head>
 <body>
-	
-	
-	<table border=1 >
+
+
+	<h2>Lista Angajati</h2>
+	<br>
+	<br>
+
+	<table>
 		<tr>
-			<td>Angajati</td>
+			<th>ID</th>
+			<th>Nume</th>
+			<th>Prenume</th>
+			<th>Functie</th>
 		</tr>
+		<c:forEach items="${model.employee}" var="e">
+			<tr>
+
+				<td><c:out value="${e.id }" /></td>
+				<td><c:out value="${e.nume }" /></td>
+				<td><c:out value="${e.prenume }" /></td>
+				<td><c:out value="${e.functie }" /></td>
+				<td id="button"><input type="button" value="Detalii"
+					class="button_active" onclick="location.href='./detalii/${e.id}';" /></td>
+			</tr>
+
+
+		</c:forEach>
 	</table>
-	<br>
-	<br>
-	<ul >  
-	<c:forEach items="${model.employee}" var="e">
-	<tr>
-		<li><c:out value="${e.id }" /></li>
-		<li><c:out value="${e.nume }"/>-</li>
-		<li> href="./detalii/${e.id }">Detalii</li>
-		</tr>
-		
-		
-	</c:forEach>
-	</ul>
-	
-	
-	
-	
-	
+
+
+	<div class="footer">
+
+		<p>footer</p>
+	</div>
+
+
 </body>
+
 </html>

@@ -28,7 +28,7 @@ public class EmployeeController {
 		
 	}
 	
-	@RequestMapping(value = "employee.htm/{employeeId}")
+	@RequestMapping(value = "detalii/{employeeId}")
 	public ModelAndView getEmployeeDetails(@PathVariable String employeeId) throws SQLException {
 
 		EmployeeDAO edao = new EmployeeDAO();
@@ -40,7 +40,7 @@ public class EmployeeController {
 		ModelMap model = new ModelMap();
 		model.put("employee", employee);
 		// trimitem model spre jsp
-		return new ModelAndView("employee", "model", model);
+		return new ModelAndView("employee/detalii", "model", model);
 
 	}
 	@RequestMapping(value="employeeAdd.htm")
