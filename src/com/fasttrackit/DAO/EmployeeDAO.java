@@ -16,7 +16,7 @@ public class EmployeeDAO {
 		
 		Connection conn=DBHelper.getConnection();
 		
-		String insertString="INSERT INTO employee (id, nume, prenume,functie, datanastere,dataangajare,sex,email,nrtelefon) VALUES(?,?,?,?,?,?,?,?,?)";
+		String insertString="INSERT INTO employee (id, nume, prenume,functie, dataNastere,dataAngajare,sex,email,nrtelefon) VALUES(?,?,?,?,?,?,?,?,?)";
 		
 		PreparedStatement stmt=conn.prepareStatement(insertString);
 
@@ -50,8 +50,8 @@ public class EmployeeDAO {
 			String nume = rs.getString("nume");
 			String prenume = rs.getString("prenume");
 			String functie = rs.getString("functie");
-			String dataNastere = rs.getString("datanastere");
-			String dataAngajare = rs.getString("dataangajare");
+			String dataNastere = rs.getString("dataNastere");
+			String dataAngajare = rs.getString("dataAngajare");
 			String sex = rs.getString("sex");
 			String email = rs.getString("email");
 			String nrtelefon = rs.getString("nrtelefon");
@@ -80,8 +80,8 @@ public class EmployeeDAO {
 			String nume = rs.getString("nume");
 			String prenume = rs.getString("prenume");
 			String functie = rs.getString("functie");
-			String dataNastere = rs.getString("datanastere");
-			String dataAngajare = rs.getString("dataangajare");
+			String dataNastere = rs.getString("dataNastere");
+			String dataAngajare = rs.getString("dataAngajare");
 			String sex = rs.getString("sex");
 			String email = rs.getString("email");
 			String nrtelefon = rs.getString("nrtelefon");
@@ -98,7 +98,7 @@ public class EmployeeDAO {
 		
 		Connection conn= DBHelper.getConnection();
 		
-		String updateString="UPDATE employee SET nume=?,prenume=?,functie=?,datanastere=?,dataangajare=?,sex=?,email=?,nrtelefon=?";
+		String updateString="UPDATE employee SET nume=?,prenume=?,functie=?,dataNastere=?,dataAngajare=?,sex=?,email=?,nrtelefon=?";
 		PreparedStatement stmt=conn.prepareStatement(updateString);
 		stmt.setString(1, employee.getNume());
 		stmt.setString(2, employee.getPrenume());

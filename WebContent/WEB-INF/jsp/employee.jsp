@@ -65,10 +65,10 @@ h2 {
 		<c:forEach items="${model.employee}" var="e">
 			<tr>
 
-				<td><c:out value="${e.id }" /></td>
-				<td><c:out value="${e.nume }" /></td>
-				<td><c:out value="${e.prenume }" /></td>
-				<td><c:out value="${e.functie }" /></td>
+				<td><c:out value="${e.id}" /></td>
+				<td><c:out value="${e.nume}" /></td>
+				<td><c:out value="${e.prenume}" /></td>
+				<td><c:out value="${e.functie}" /></td>
 				<td id="button"><input type="button" value="Detalii"
 					class="button_active" onclick="location.href='./detalii/${e.id}';" /></td>
 			</tr>
@@ -80,7 +80,8 @@ h2 {
 
 	<div class="footer">
 
-		<p>footer</p>
+		<div><input type="button" value="Adauga"
+					class="button_active" onclick="location.href='./employeeAdd.htm';" /></div>
 	</div>
 
 
