@@ -29,7 +29,7 @@ public class EmployeeDAO {
 		stmt.setString(7, e.getSex());
 		stmt.setString(8, e.getEmail());
 		stmt.setString(9, e.getNrtelefon());
-		
+		stmt.executeUpdate();
 		
 		DBHelper.closeConnection(conn);
 		

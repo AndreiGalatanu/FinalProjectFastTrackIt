@@ -2,12 +2,11 @@
 	pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
-
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Adauga Banca</title>
+<title>Editeaza <c:out value="${model.employee.nume }"></c:out> </title>
 <style>
 table {
 	font-family: arial, sans-serif;
@@ -32,16 +31,12 @@ text-align: center;
 </head>
 <body>
 
-	<h2>Adauga angajat</h2>
-	<br />
-	<br />
+<div>Editeaza <c:out value="${model.employee.nume }" /></div>
 
-	<form:form action="./addEmployee.htm" commandName="employeeForm" method="post">
+<form:form action="" commandName="employeeForm" method="POST" />
 
 
-
-<table  >
-	
+	<table  >
 		<tr>
 			<td>Nume</td>
 			<td><form:input path="nume" /></td>
@@ -78,9 +73,6 @@ text-align: center;
 		<td><input type="submit" value="Salveaza" /></td>
 		</tr>
 	</table>
-	
 
-
-	</form:form>
 </body>
 </html>

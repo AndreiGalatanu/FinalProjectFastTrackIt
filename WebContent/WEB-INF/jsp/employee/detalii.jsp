@@ -75,8 +75,11 @@ text-align: center;
 			<td>Email</td>
 			<td>< c:out value="${model.employee.email }" /></td>
 		</tr>
-
+		<tr>
+		<td><input type="button" class="button_active" value="Edit" onclick="location.href='./detalii/editEmployee/${b.id}" /></td>
+		</tr>
 	</table>
+	
 
 </body>
 </html>

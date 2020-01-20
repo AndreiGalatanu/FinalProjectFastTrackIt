@@ -45,8 +45,8 @@ public class EmployeeController {
 
 	}
 
-	@RequestMapping(value = "employeeAdd.htm")
-	public ModelAndView displayAddForm(Model model) {
+	@RequestMapping(value = "employeeForm.htm")
+	public ModelAndView displayAddForm(Model model) throws SQLException {
 
 		Employee e = new Employee();
 
@@ -56,7 +56,7 @@ public class EmployeeController {
 
 	}
 
-	@RequestMapping(value="addEmployee.htm", method=RequestMethod.POST)
+	@RequestMapping(value = "addEmployee.htm", method = RequestMethod.POST)
 	public ModelAndView addEmployee(@ModelAttribute("employeeForm") Employee employee, ModelMap model,
 			BindingResult result) {
 		try {
@@ -66,6 +66,32 @@ public class EmployeeController {
 			ex.printStackTrace();
 		}
 
+		return new ModelAndView("redirect:/employee.htm");
+
+	}
+
+	@RequestMapping(value = "editEmployee/{employeeId}")
+	public ModelAndView displayEditForm(@PathVariable String employeeId, Model model) throws SQLException {
+
+		EmployeeDAO edao = new EmployeeDAO();
+		Employee e = edao.getEmployeeById(employeeId);
+		System.out.println(e.getNume());
+		model.addAttribute("employeeForm",e);
+
+		return new ModelAndView("employee/edit", "model", model);
+	}
+	
+	@RequestMapping(value="editEmployee.htm", method=RequestMethod.GET)
+	public ModelAndView editEmployee(@ModelAttribute("employeeForm") Employee employee,ModelMap model,BindingResult result) {
+		
+		try {
+			EmployeeDAO edao= new EmployeeDAO();
+			edao.createEmployee(employee);
+		}catch(Exception ex) {
+			ex.printStackTrace();
+		}
+		
+		
 		return new ModelAndView("redirect:/employee.htm");
 	}
 

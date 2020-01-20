@@ -39,13 +39,14 @@ h2 {
 	text-align: center;
 }
 
-.footer {
+.add {
 	position: fixed;
-	left: 0;
-	bottom: 0;
+	margin-top:6px;
+	
 	width: 100%;
 	text-align: center;
 }
+
 </style>
 </head>
 <body>
@@ -54,6 +55,10 @@ h2 {
 	<h2>Lista Angajati</h2>
 	<br>
 	<br>
+	<div style="padding-bottom: 5px">
+                    <input type="text" id="search" placeholder="Search">
+                    <label for="search">&#128270;</label>
+                </div>
 
 	<table>
 		<tr>
@@ -71,18 +76,21 @@ h2 {
 				<td><c:out value="${e.functie}" /></td>
 				<td id="button"><input type="button" value="Detalii"
 					class="button_active" onclick="location.href='./detalii/${e.id}';" /></td>
+				<td><a href="./editEmployee/${e.id}">Edit</a></td>
+
 			</tr>
 
 
 		</c:forEach>
 	</table>
+	<div class="add">
+			<input type="button" value="Adauga" class="button_active"
+				onclick="location.href='./employeeForm.htm';" />
+		</div>
 
 
-	<div class="footer">
-
-		<div><input type="button" value="Adauga"
-					class="button_active" onclick="location.href='./employeeAdd.htm';" /></div>
-	</div>
+	
+	
 
 
 </body>
