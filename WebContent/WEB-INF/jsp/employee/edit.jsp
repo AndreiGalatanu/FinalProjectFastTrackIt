@@ -33,10 +33,15 @@ text-align: center;
 
 <div>Editeaza <c:out value="${model.employee.nume }" /></div>
 
-<form:form action="" commandName="employeeForm" method="POST" />
+<form:form action="${pageContext.request.contextPath}/editEmployee.htm" commandName="employeeForm" method="post" >
 
 
 	<table  >
+	
+			
+		<form:input type="hidden" path="id" />
+		
+	
 		<tr>
 			<td>Nume</td>
 			<td><form:input path="nume" /></td>
@@ -73,6 +78,6 @@ text-align: center;
 		<td><input type="submit" value="Salveaza" /></td>
 		</tr>
 	</table>
-
+</form:form>
 </body>
 </html>

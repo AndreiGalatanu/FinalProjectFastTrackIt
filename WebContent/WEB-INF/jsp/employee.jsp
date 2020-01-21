@@ -55,10 +55,7 @@ h2 {
 	<h2>Lista Angajati</h2>
 	<br>
 	<br>
-	<div style="padding-bottom: 5px">
-                    <input type="text" id="search" placeholder="Search">
-                    <label for="search">&#128270;</label>
-                </div>
+
 
 	<table>
 		<tr>

@@ -74,7 +74,6 @@ public class EmployeeDAO {
 		stmt.setString(1,employeeID);
 		ResultSet rs=stmt.executeQuery();
 		Employee result=null;
-		
 		if(rs.next()) {
 			int id= rs.getInt("id");
 			String nume = rs.getString("nume");
@@ -98,7 +97,7 @@ public class EmployeeDAO {
 		
 		Connection conn= DBHelper.getConnection();
 		
-		String updateString="UPDATE employee SET nume=?,prenume=?,functie=?,dataNastere=?,dataAngajare=?,sex=?,email=?,nrtelefon=?";
+		String updateString="UPDATE employee SET nume=?,prenume=?,functie=?,dataNastere=?,dataAngajare=?,sex=?,email=?,nrtelefon=? where id=?";
 		PreparedStatement stmt=conn.prepareStatement(updateString);
 		stmt.setString(1, employee.getNume());
 		stmt.setString(2, employee.getPrenume());
@@ -108,6 +107,7 @@ public class EmployeeDAO {
 		stmt.setString(6, employee.getSex());
 		stmt.setString(7, employee.getEmail());
 		stmt.setString(8, employee.getNrtelefon());
+		stmt.setInt(9, employee.getId());
 		stmt.executeUpdate();
 		
 		DBHelper.closeConnection(conn);

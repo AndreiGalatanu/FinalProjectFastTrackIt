@@ -75,18 +75,17 @@ public class EmployeeController {
 
 		EmployeeDAO edao = new EmployeeDAO();
 		Employee e = edao.getEmployeeById(employeeId);
-		System.out.println(e.getNume());
 		model.addAttribute("employeeForm",e);
 
 		return new ModelAndView("employee/edit", "model", model);
 	}
 	
-	@RequestMapping(value="editEmployee.htm", method=RequestMethod.GET)
-	public ModelAndView editEmployee(@ModelAttribute("employeeForm") Employee employee,ModelMap model,BindingResult result) {
+	@RequestMapping(value="editEmployee.htm", method=RequestMethod.POST)
+	public ModelAndView editEmployee(@ModelAttribute("editEmployee") Employee employee,ModelMap model,BindingResult result) {
 		
 		try {
 			EmployeeDAO edao= new EmployeeDAO();
-			edao.createEmployee(employee);
+			edao.updateEmployee(employee);
 		}catch(Exception ex) {
 			ex.printStackTrace();
 		}
