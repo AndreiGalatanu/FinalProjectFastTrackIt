@@ -13,6 +13,43 @@
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="description" content="">
 <meta name="author" content="">
+<style>
+.col-lg-7 {
+	margin: auto;
+	width: 100%;
+	padding: 10px;
+}
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #4e73df;
+}
+
+li {
+  float: center;
+   border-right: 1px solid #bbb;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  width:100;
+}
+
+li a:hover {
+  background-color: #244bc2;
+  text-color: white;
+}
+li a.active {
+  color: white;
+  background-color: #4e73df;
+}
+</style>
 
 <title>WorkPlan Register</title>
 
@@ -28,71 +65,97 @@
 <link
 	href="${pageContext.request.contextPath}/resources/css/sb-admin-2.min.css"
 	rel="stylesheet">
-</style>
+
 </head>
+<nav>
+<ul>
+  <li><a class="active" href="./employee.htm">Home</a></li>
+ 
+</ul>
+
+
+</nav>
+
 <body>
 
-	<div class="container">
 
-		<div class="card o-hidden border-0 shadow-lg my-5">
-			<div class="card-body p-0">
-				<!-- Nested Row within Card Body -->
 
-				<div class="row">
-					<div class="col-lg-7">
-						<div class="p-5">
-							<div class="text-center">
-								<h1 class="h4 text-gray-900 mb-4">Adauga Angajat</h1>
-							</div>
-							<form:form class="form" action="./addEmployee.htm" commandName="employeeForm"
-								method="post">
+
+	<form:form class="form" action="./addEmployee.htm"
+		commandName="employeeForm" method="post">
+
+		<div class="container">
+
+			<div class="card o-hidden border-0 shadow-lg my-5">
+				<div class="card-body p-0">
+					<!-- Nested Row within Card Body -->
+
+					<div class="row">
+						<div class="col-lg-7">
+							<div class="p-5">
+								<div class="text-center">
+									<h1 class="h4 text-gray-900 mb-4">Adauga Angajat</h1>
+								</div>
 								<div class="form-group row">
 									<div class="col-sm-6 mb-3 mb-sm-0">
 										<input type="text" class="form-control form-control-user"
-											id="nume" placeholder="Nume">
+											name="nume" id="nume" placeholder="Nume">
 									</div>
 									<div class="col-sm-6">
 										<input type="text" class="form-control form-control-user"
-											id="prenume" placeholder="Prenume">
+											name="prenume" id="prenume" placeholder="Prenume">
 									</div>
 								</div>
 								<div class="form-group">
 									<input type="text" class="form-control form-control-user"
-										id="email" placeholder="Email Address">
+										name="email" id="email" placeholder="Email Address">
 								</div>
 								<div class="form-group row">
 									<div class="col-sm-6 mb-3 mb-sm-0">
 										<input type="text" class="form-control form-control-user"
-											id="functie" placeholder="Functie">
+											name="functie" id="functie" placeholder="Functie">
 									</div>
 									<div class="col-sm-6">
-										<input type="password" class="form-control form-control-user"
-											id="exampleRepeatPassword" placeholder="Data Angajare">
+										<input type="text" class="form-control form-control-user"
+											name="dataAngajare" id="dataAngajare"
+											placeholder="Data Angajare">
 									</div>
 								</div>
 								<div class="form-group row">
 									<div class="col-sm-6 mb-3 mb-sm-0">
 										<input type="text" class="form-control form-control-user"
-											id="functie" placeholder="Data Nastere">
+											name="dataNastere" id="dataNastere"
+											placeholder="Data Nastere">
 									</div>
 									<div class="col-sm-6">
 										<input type="text" class="form-control form-control-user"
-											id="exampleRepeatPassword" placeholder="Sex">
+											name="sex" id="sex" placeholder="Sex">
 									</div>
+								</div>
+
+								<div class="form-group row">
+									<div class="col-sm-6 mb-3 mb-sm-0">
+										<input type="text" class="form-control form-control-user"
+											name="nrtelefon" id="nrtelefon"
+											placeholder="Numar Telefon">
+									</div>
+									
 
 
 
 								</div>
-								<a type="submit" class="btn btn-primary btn-user btn-block" ><span
-														class="icon text-white-50"> <i
-															class="fas fa-info-circle"></i>
-															</span><span class="text">Adauga</span>
-									 </a>
+
+								<input type="submit" value="Adauga"
+									class="btn btn-primary btn-user btn-block"><span
+									class="icon text-white-50"> <i
+									class="fas fa-info-circle"></i>
+								</span>
+
 								<hr>
 
-							</form:form>
-						
-							
+
+
+
 							</div>
 						</div>
 					</div>
@@ -100,61 +163,10 @@
 			</div>
 		</div>
 
-	
-	
-
-
-	<h2>Adauga angajat</h2>
-	<br />
-	<br />
-
-	<form:form action="./addEmployee.htm" commandName="employeeForm"
-		method="post">
-
-
-
-		<table>
-
-			<tr>
-				<td>Nume</td>
-				<td><form:input path="nume" /></td>
-			</tr>
-			<tr>
-				<td>Prenume</td>
-				<td><form:input path="prenume" /></td>
-			</tr>
-			<tr>
-				<td>Functie</td>
-				<td><form:input path="functie" /></td>
-			</tr>
-			<tr>
-				<td>Data Nastere</td>
-				<td><form:input path="dataNastere" /></td>
-			</tr>
-			<tr>
-				<td>Data Angajare</td>
-				<td><form:input path="dataAngajare" /></td>
-			</tr>
-			<tr>
-				<td>Sex</td>
-				<td><form:input path="sex" /></td>
-			</tr>
-			<tr>
-				<td>Telefon</td>
-				<td><form:input path="nrtelefon" /></td>
-			</tr>
-			<tr>
-				<td>Email</td>
-				<td><form:input path="email" /></td>
-			</tr>
-			<tr>
-				<td><input type="submit" value="Salveaza" /></td>
-			</tr>
-		</table>
-
-
-
 	</form:form>
+
+
+
 
 	<!-- Bootstrap core JavaScript-->
 	<script
