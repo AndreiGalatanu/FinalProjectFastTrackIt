@@ -102,7 +102,7 @@
 
 			<!-- Nav Item - Tables -->
 			<li class="nav-item active"><a class="nav-link"
-				href="./calendar.htm"> <i class="fas fa-fw fa-table"></i> <span>Work
+				href="${pageContext.request.contextPath}/calendar.htm"> <i class="fas fa-fw fa-table"></i> <span>Work
 						Plan</span></a></li>
 
 			<!-- Divider -->

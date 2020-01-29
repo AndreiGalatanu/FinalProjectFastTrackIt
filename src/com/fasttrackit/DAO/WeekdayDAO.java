@@ -8,6 +8,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 
 import com.fasttrackit.DBHelper.DBHelper;
+import com.fasttrackit.pojo.Employee;
 import com.fasttrackit.pojo.Weekday;
 
 public class WeekdayDAO {
@@ -52,13 +53,13 @@ public class WeekdayDAO {
 		return result;
 	}
 
-	public Weekday getWeekdayById(String weekdayID) throws SQLException {
+	public Weekday getWeekdayById(int weekdayId) throws SQLException {
 
 		Connection conn = DBHelper.getConnection();
 
 		String selectString = "select * from weekdays where id=?";
 		PreparedStatement stmt = conn.prepareStatement(selectString);
-		stmt.setString(1, weekdayID);
+		stmt.setInt(1, weekdayId);
 		ResultSet rs = stmt.executeQuery();
 		Weekday result = null;
 		if (rs.next()) {
@@ -98,6 +99,38 @@ public class WeekdayDAO {
 
 		DBHelper.closeConnection(conn);
 
+	}
+	/*-------------WEEK DAY + EMPLOYEES---------------*/
+	public ArrayList<Weekday> getWeekdays() throws SQLException{
+		
+		Connection con=DBHelper.getConnection();
+		
+		String selectString ="select * from weekdays";
+		Statement stmt= con.createStatement();
+		ResultSet rs= stmt.executeQuery(selectString);
+		
+		ArrayList<Weekday> result = new ArrayList<Weekday>();
+		
+		while(rs.next()) {
+			int id= rs.getInt("id");
+			String day = rs.getString("day");
+			
+	//		int weekdayId= rs.getInt("dayid");
+	//		WeekdayDAO wdao= new WeekdayDAO();
+	//		Weekday d = wdao.getWeekdayById(weekdayId);
+			
+			EmployeeDAO edao= new EmployeeDAO();
+			ArrayList<Employee> employee = edao.getEmployeeByDayId(id);
+			Weekday days = new Weekday(id,day) ;
+			result.add(days);
+		}
+		
+		
+		
+		DBHelper.closeConnection(con);
+		
+		return result;
+		
 	}
 
 }

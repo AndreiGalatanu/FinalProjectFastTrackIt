@@ -59,7 +59,7 @@ h1{
 			<!-- Sidebar - Brand -->
 			<a
 				class="sidebar-brand d-flex align-items-center justify-content-center"
-				href="index.html">
+				href="${pageContext.request.contextPath}/employee.htm">
 				<div class="sidebar-brand-icon rotate-n-15">
 					<i class="fas fa-calendar-alt"></i>
 				</div>

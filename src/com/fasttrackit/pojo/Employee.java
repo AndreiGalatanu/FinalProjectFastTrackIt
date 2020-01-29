@@ -30,6 +30,10 @@ public class Employee {
 		this.nrtelefon = nrtelefon;
 	}
 
+	public Employee(int id, String nume, String prenume, String functie) {
+		// TODO Auto-generated constructor stub
+	}
+
 	public int getId() {
 		return id;
 	}
