@@ -15,12 +15,7 @@
 <meta name="author" content="">
 
 
-<!-- ---- Calendar css            -->
-<link rel="stylesheet"
-	href="${pageContext.request.contextPath}/resources/css/style.css">
-<script>
-	document.getElementsByTagName("html")[0].className += " js";
-</script>
+
 <!-- Custom fonts for this template -->
 <link
 	href="${pageContext.request.contextPath}/resources/vendor/fontawesome-free/css/all.min.css"
@@ -40,11 +35,52 @@
 	rel="stylesheet">
 
 <style>
-h1{
+body {
+	font-family: Arial;
+}
+
+/* Style the tab */
+.tab {
+	overflow: hidden;
+	border: 1px solid #ccc;
+	background-color: #f1f1f1;
+}
+
+/* Style the buttons inside the tab */
+.tab button {
+	background-color: inherit;
+	float: left;
+	border: none;
+	outline: none;
+	cursor: pointer;
+	padding: 14px 16px;
+	transition: 0.3s;
+	font-size: 17px;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+	background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+	background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent {
+	display: none;
+	padding: 6px 12px;
+	border: 1px solid #ccc;
+	border-top: none;
+}
+
+h3 {
 	text-align: center;
-	left-margin: 4px;
 }
 </style>
+
 </head>
 <body id="page-top">
 
@@ -74,31 +110,7 @@ h1{
 					<i class="fas fa-users"></i> <span>Angajati</span>
 			</a></li>
 
-			<!-- Divider -->
-			<hr class="sidebar-divider">
 
-			<!-- Heading -->
-			<div class="sidebar-heading">Interface</div>
-
-			<!-- Nav Item - Pages Collapse Menu -->
-			<li class="nav-item"><a class="nav-link collapsed" href="#"
-				data-toggle="collapse" data-target="#collapseTwo"
-				aria-expanded="true" aria-controls="collapseTwo"> <i
-					class="fas fa-fw fa-cog"></i> <span>Components</span>
-			</a>
-				<div id="collapseTwo" class="collapse" aria-labelledby="headingTwo"
-					data-parent="#accordionSidebar">
-					<div class="bg-white py-2 collapse-inner rounded">
-						<h6 class="collapse-header">Custom Components:</h6>
-						<a class="collapse-item" href="buttons.html">Buttons</a> <a
-							class="collapse-item" href="cards.html">Cards</a>
-					</div>
-				</div></li>
-
-
-
-			<!-- Divider -->
-			<hr class="sidebar-divider">
 
 			<!-- Heading -->
 			<div class="sidebar-heading">Employees Work Plan</div>
@@ -107,8 +119,8 @@ h1{
 
 			<!-- Nav Item - Tables -->
 			<li class="nav-item active"><a class="nav-link"
-				href="./calendar.htm"> <i class="fas fa-fw fa-table"></i> <span>Work
-						Plan</span></a></li>
+				href="${pageContext.request.contextPath}/calendar.htm"> <i
+					class="fas fa-fw fa-table"></i> <span>Work Plan</span></a></li>
 
 			<!-- Divider -->
 			<hr class="sidebar-divider d-none d-md-block">
@@ -169,245 +181,310 @@ h1{
 				</nav>
 				<!-- End of Topbar -->
 
+				<!-- Begin Page Content -->
+				<div class="container-fluid">
 
+					<!-- Page Heading -->
+					<h1 class="h3 mb-2 text-gray-800">Orar</h1>
+					<p class="mb-4">Aici gasim lista angajatilor .</p>
 
-				<h1 id="centru" class="h3 mb-2 text-gray-800">Work Plan</h1>
-
-				<div
-					class="cd-schedule cd-schedule--loading margin-top-lg margin-bottom-lg js-cd-schedule">
-					<div class="cd-schedule__timeline">
-						<ul>
-							
-							<li><span>07:00</span></li>
-							<li><span>08:00</span></li>
-							<li><span>09:00</span></li>
-							<li><span>09:30</span></li>
-							<li><span>10:00</span></li>							
-							<li><span>11:00</span></li>							
-							<li><span>12:00</span></li>							
-							<li><span>13:00</span></li>							
-							<li><span>14:00</span></li>							
-							<li><span>15:00</span></li>							
-							<li><span>16:00</span></li>
-							<li><span>17:00</span></li>
-							<li><span>18:00</span></li>
-							<li><span>19:00</span></li>
-							<li><span>20:00</span></li>
-							<li><span>21:00</span></li>
-							<li><span>22:00</span></li>
-							<li><span>23:00</span></li>
-							<li><span>24:00</span></li>
-							<li><span>00:00</span></li>
-							<li><span>01:00</span></li>
-							<li><span>02:00</span></li>
-							<li><span>03:00</span></li>
-							<li><span>04:00</span></li>
-							<li><span>05:00</span></li>
-							<li><span>06:00</span></li>
-							
-
-						</ul>
-					</div>
-					<!-- .cd-schedule__timeline -->
-
-					<div class="cd-schedule__events">
-						<ul>
-							<li class="cd-schedule__group">
-								<div class="cd-schedule__top-info">
-									<span>Monday</span>
-								</div>
-
-								<ul>
-									<li class="cd-schedule__event"><a data-start="07:00"
-										data-end="15:00" data-content="event-abs-circuit"
-										data-event="event-1" href="#0"> <em
-											class="cd-schedule__name">Tura 1</em>
-									</a></li>
-
-
-
-									<li class="cd-schedule__event"><a data-start="15:00"
-										data-end="23:00" data-content="event-yoga-1"
-										data-event="event-2" href="#0"> <em
-											class="cd-schedule__name">Tura 2</em>
-									</a></li>
-								</ul>
-							</li>
-
-							<li class="cd-schedule__group">
-								<div class="cd-schedule__top-info">
-									<span>Tuesday</span>
-								</div>
-
-								<ul>
-									<li class="cd-schedule__event"><a data-start="07:00"
-										data-end="15:00" data-content="event-abs-circuit"
-										data-event="event-3" href="#0"> <em
-											class="cd-schedule__name">Tura 1</em>
-									</a></li>
-
-
-
-									<li class="cd-schedule__event"><a data-start="15:00"
-										data-end="23:00" data-content="event-yoga-1"
-										data-event="event-4" href="#0"> <em
-											class="cd-schedule__name">Tura 2</em>
-									</a></li>
-									
-									
-								</ul>
-							</li>
-
-							<li class="cd-schedule__group">
-								<div class="cd-schedule__top-info">
-									<span>Wednesday</span>
-								</div>
-
-								<ul>
-									<li class="cd-schedule__event"><a data-start="07:00"
-										data-end="15:00" data-content="event-abs-circuit"
-										data-event="event-1" href="#0"> <em
-											class="cd-schedule__name">Tura 1</em>
-									</a></li>
-
-
-
-									<li class="cd-schedule__event"><a data-start="15:00"
-										data-end="23:00" data-content="event-yoga-1"
-										data-event="event-2" href="#0"> <em
-											class="cd-schedule__name">Tura 2</em>
-									</a></li>
-								</ul>
-							</li>
-
-							<li class="cd-schedule__group">
-								<div class="cd-schedule__top-info">
-									<span>Thursday</span>
-								</div>
-
-								<ul>
-									<li class="cd-schedule__event"><a data-start="07:00"
-										data-end="15:00" data-content="event-abs-circuit"
-										data-event="event-3" href="#0"> <em
-											class="cd-schedule__name">Tura 1</em>
-									</a></li>
-
-
-
-									<li class="cd-schedule__event"><a data-start="15:00"
-										data-end="23:00" data-content="event-yoga-1"
-										data-event="event-4" href="#0"> <em
-											class="cd-schedule__name">Tura 2</em>
-									</a></li>
-								</ul>
-							</li>
-
-							<li class="cd-schedule__group">
-								<div class="cd-schedule__top-info">
-									<span>Friday</span>
-								</div>
-
-								<ul>
-									<li class="cd-schedule__event"><a data-start="07:00"
-										data-end="15:00" data-content="event-abs-circuit"
-										data-event="event-1" href="#0"> <em
-											class="cd-schedule__name">Tura 1</em>
-									</a></li>
-
-
-
-									<li class="cd-schedule__event"><a data-start="15:00"
-										data-end="23:00" data-content="event-yoga-1"
-										data-event="event-2" href="#0"> <em
-											class="cd-schedule__name">Tura 2</em>
-									</a></li>
-								</ul>
-					</div>
-
-					<div class="cd-schedule-modal">
-						<header class="cd-schedule-modal__header">
-							<div class="cd-schedule-modal__content">
-								<span class="cd-schedule-modal__date"></span>
-								<h3 class="cd-schedule-modal__name"></h3>
-							</div>
-
-							<div class="cd-schedule-modal__header-bg"></div>
-						</header>
-
-						<div class="cd-schedule-modal__body">
-							<div class="cd-schedule-modal__event-info"></div>
-							<div class="cd-schedule-modal__body-bg"></div>
+					<!-- DataTales Example -->
+					<div class="card shadow mb-4">
+						<div class="card-header py-3">
+							<h6 class="m-0 font-weight-bold text-primary">Orar</h6>
 						</div>
+						<div class="card-body">
+							<div class="table-responsive">
 
-						<a href="#0" class="cd-schedule-modal__close text-replace">Close</a>
+								<div class="tab">
+									<button class="tablinks" onclick="openCity(event, 'Luni')">Luni</button>
+									<button class="tablinks" onclick="openCity(event, 'Marti')">Marti</button>
+									<button class="tablinks" onclick="openCity(event, 'Miercuri')">Miercuri</button>
+									<button class="tablinks" onclick="openCity(event, 'Joi')">Joi</button>
+									<button class="tablinks" onclick="openCity(event, 'Vineri')">Vineri</button>
+								</div>
+
+								<div id="Luni" class="tabcontent">
+									<h3>Luni</h3>
+									<p>Programa pe ziua de luni.</p>
+									<table class="table table-bordered" id="dataTable" width="100%"
+										cellspacing="0">
+										<thead>
+											<tr>
+												<th>Nume</th>
+												<th>Prenume</th>
+												<th>Functie</th>
+												<th>Timp</th>
+
+
+											</tr>
+
+										</thead>
+
+										<tbody>
+
+											<c:forEach items="${model.luni}" var="l">
+												<tr>
+
+													<td><c:out value="${l.nume}" /></td>
+													<td><c:out value="${l.prenume}" /></td>
+													<td><c:out value="${l.functie}" /></td>
+													<td>8h</td>
+
+
+												</tr>
+											</c:forEach>
+
+
+
+
+										</tbody>
+									</table>
+
+								</div>
+
+								<div id="Marti" class="tabcontent">
+
+									<h3>Marti</h3>
+									<p>Programa pe ziua de marti.</p>
+									<table class="table table-bordered" id="dataTable" width="100%"
+										cellspacing="0">
+										<thead>
+											<tr>
+												<th>Nume</th>
+												<th>Prenume</th>
+												<th>Functie</th>
+												<th>Timp</th>
+
+
+											</tr>
+
+										</thead>
+
+										<tbody>
+
+											<c:forEach items="${model.marti}" var="m">
+												<tr>
+
+													<td><c:out value="${m.nume}" /></td>
+													<td><c:out value="${m.prenume}" /></td>
+													<td><c:out value="${m.functie}" /></td>
+													<td>8h</td>
+
+
+												</tr>
+											</c:forEach>
+
+
+
+
+										</tbody>
+									</table>
+
+
+								</div>
+
+								<div id="Miercuri" class="tabcontent">
+									<h3>Miercuri</h3>
+									<p>Programa pe ziua de miercuri.</p>
+									<table class="table table-bordered" id="dataTable" width="100%"
+										cellspacing="0">
+										<thead>
+											<tr>
+												<th>Nume</th>
+												<th>Prenume</th>
+												<th>Functie</th>
+												<th>Timp</th>
+
+
+											</tr>
+
+										</thead>
+
+										<tbody>
+
+											<c:forEach items="${model.miercuri}" var="mi">
+												<tr>
+
+													<td><c:out value="${mi.nume}" /></td>
+													<td><c:out value="${mi.prenume}" /></td>
+													<td><c:out value="${mi.functie}" /></td>
+													<td>8h</td>
+
+
+												</tr>
+											</c:forEach>
+
+
+
+
+										</tbody>
+									</table>
+
+								</div>
+
+								<div id="Joi" class="tabcontent">
+									<h3>Joi</h3>
+									<p>Programa pe ziua de Joi.</p>
+									<table class="table table-bordered" id="dataTable" width="100%"
+										cellspacing="0">
+										<thead>
+											<tr>
+												<th>Nume</th>
+												<th>Prenume</th>
+												<th>Functie</th>
+												<th>Timp</th>
+
+
+											</tr>
+
+										</thead>
+
+										<tbody>
+
+											<c:forEach items="${model.joi}" var="j">
+												<tr>
+
+													<td><c:out value="${j.nume}" /></td>
+													<td><c:out value="${j.prenume}" /></td>
+													<td><c:out value="${j.functie}" /></td>
+													<td>8h</td>
+
+
+												</tr>
+											</c:forEach>
+
+
+
+
+										</tbody>
+									</table>
+
+								</div>
+
+								<div id="Vineri" class="tabcontent">
+									<h3>Vineri</h3>
+									<p>Programa pe ziua de vineri.</p>
+									<table class="table table-bordered" id="dataTable" width="100%"
+										cellspacing="0">
+										<thead>
+											<tr>
+												<th>Nume</th>
+												<th>Prenume</th>
+												<th>Functie</th>
+												<th>Timp</th>
+
+
+											</tr>
+
+										</thead>
+
+										<tbody>
+
+											<c:forEach items="${model.vineri}" var="v">
+												<tr>
+
+													<td><c:out value="${v.nume}" /></td>
+													<td><c:out value="${v.prenume}" /></td>
+													<td><c:out value="${v.functie}" /></td>
+													<td>6h</td>
+
+
+												</tr>
+											</c:forEach>
+
+
+
+
+										</tbody>
+									</table>
+
+								</div>
+
+
+
+
+
+
+
+
+
+
+							</div>
+						</div>
 					</div>
 
-					<div class="cd-schedule__cover-layer"></div>
 				</div>
-				<!-- .cd-schedule -->
-
-
-
-
-
-
-
-
-
-
+				<!-- /.container-fluid -->
 
 			</div>
-			<!-- End of Content Wrapper -->
+			<!-- End of Main Content -->
+
+			<!-- Footer -->
+			<footer class="sticky-footer bg-white">
+				<div class="container my-auto">
+					<div class="copyright text-center my-auto">
+						<span>Copyright &copy; Work Plan Inc. </span>
+					</div>
+				</div>
+			</footer>
+			<!-- End of Footer -->
 
 		</div>
-		<!-- End of Page Wrapper -->
+		<!-- End of Content Wrapper -->
 
-		<!-- Scroll to Top Button-->
-		<a class="scroll-to-top rounded" href="#page-top"> <i
-			class="fas fa-angle-up"></i>
-		</a>
+	</div>
+	<!-- End of Page Wrapper -->
 
-		<!-- Schedule  START-->
+	<!-- Scroll to Top Button-->
+	<a class="scroll-to-top rounded" href="#page-top"> <i
+		class="fas fa-angle-up"></i>
+	</a>
+
+	<script>
+		function openCity(evt, cityName) {
+			var i, tabcontent, tablinks;
+			tabcontent = document.getElementsByClassName("tabcontent");
+			for (i = 0; i < tabcontent.length; i++) {
+				tabcontent[i].style.display = "none";
+			}
+			tablinks = document.getElementsByClassName("tablinks");
+			for (i = 0; i < tablinks.length; i++) {
+				tablinks[i].className = tablinks[i].className.replace(
+						" active", "");
+			}
+			document.getElementById(cityName).style.display = "block";
+			evt.currentTarget.className += " active";
+		}
+	</script>
 
 
 
 
 
+	<!-- Bootstrap core JavaScript-->
+	<script
+		src="${pageContext.request.contextPath}/resources/vendor/jquery/jquery.min.js"></script>
+	<script
+		src="${pageContext.request.contextPath}/resources/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
+	<!-- Core plugin JavaScript-->
+	<script
+		src="${pageContext.request.contextPath}/resources/vendor/jquery-easing/jquery.easing.min.js"></script>
 
+	<!-- Custom scripts for all pages-->
+	<script
+		src="${pageContext.request.contextPath}/resources/js/sb-admin-2.min.js"></script>
 
-		<!-- Schedule END -->
+	<!-- Page level plugins -->
+	<script
+		src="${pageContext.request.contextPath}/resources/vendor/datatables/jquery.dataTables.min.js"></script>
+	<script
+		src="${pageContext.request.contextPath}/resources/vendor/datatables/dataTables.bootstrap4.min.js"></script>
 
-
-
-		<!-- util functions included in the CodyHouse framework -->
-
-		<script src="${pageContext.request.contextPath}/resources/js/util.js"></script>
-		<!-- util functions included in the CodyHouse framework -->
-		<script src="${pageContext.request.contextPath}/resources/js/main.js"></script>
-		<!-- Bootstrap core JavaScript-->
-		<script
-			src="${pageContext.request.contextPath}/resources/vendor/jquery/jquery.min.js"></script>
-		<script
-			src="${pageContext.request.contextPath}/resources/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-		<!-- Core plugin JavaScript-->
-		<script
-			src="${pageContext.request.contextPath}/resources/vendor/jquery-easing/jquery.easing.min.js"></script>
-
-		<!-- Custom scripts for all pages-->
-		<script
-			src="${pageContext.request.contextPath}/resources/js/sb-admin-2.min.js"></script>
-
-		<!-- Page level plugins -->
-		<script
-			src="${pageContext.request.contextPath}/resources/vendor/datatables/jquery.dataTables.min.js"></script>
-		<script
-			src="${pageContext.request.contextPath}/resources/vendor/datatables/dataTables.bootstrap4.min.js"></script>
-
-		<!-- Page level custom scripts -->
-		<script
-			src="${pageContext.request.contextPath}/resources/js/demo/datatables-demo.js"></script>
+	<!-- Page level custom scripts -->
+	<script
+		src="${pageContext.request.contextPath}/resources/js/demo/datatables-demo.js"></script>
 </body>
 
 </html>

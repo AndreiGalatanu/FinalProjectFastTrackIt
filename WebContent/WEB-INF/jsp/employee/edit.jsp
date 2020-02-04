@@ -71,26 +71,6 @@
 					class="fas fa-users"></i> <span>Angajati</span>
 			</a></li>
 
-			<!-- Divider -->
-			<hr class="sidebar-divider">
-
-			<!-- Heading -->
-			<div class="sidebar-heading">Interface</div>
-
-			<!-- Nav Item - Pages Collapse Menu -->
-			<li class="nav-item"><a class="nav-link collapsed" href="#"
-				data-toggle="collapse" data-target="#collapseTwo"
-				aria-expanded="true" aria-controls="collapseTwo"> <i
-					class="fas fa-fw fa-cog"></i> <span>Components</span>
-			</a>
-				<div id="collapseTwo" class="collapse" aria-labelledby="headingTwo"
-					data-parent="#accordionSidebar">
-					<div class="bg-white py-2 collapse-inner rounded">
-						<h6 class="collapse-header">Custom Components:</h6>
-						<a class="collapse-item" href="buttons.html">Buttons</a> <a
-							class="collapse-item" href="cards.html">Cards</a>
-					</div>
-				</div></li>
 
 
 
@@ -230,14 +210,13 @@
 											<td>Email</td>
 											<td><form:input path="email" /></td>
 										</tr>
-										
-								
+
+
 									</table>
-									
+
 									<input type="submit" value="Salveaza"
-									class="btn btn-primary btn-user btn-block"><span
-									class="icon text-white-50"> <i
-									class="fas fa-save"></i>
+										class="btn btn-primary btn-user btn-block">
+									<span class="icon text-white-50"> <i class="fas fa-save"></i>
 									</span>
 								</form:form>
 								<!-- Footer -->

@@ -45,6 +45,34 @@ public class EmployeeController {
 
 	}
 
+//----------------------  LUNI ----------------------- //
+	
+	
+	
+
+	/*	@RequestMapping(value = "calendar.htm")
+		public ModelAndView getCalendarLuni() throws SQLException {
+		
+			ModelMap model = new ModelMap();
+			
+			EmployeeDAO edao = new EmployeeDAO();
+			ArrayList<Employee> employeeLuni = edao.getEmployee();
+			model.put("employee", employeeLuni);
+			return new ModelAndView("calendar/calendar", "model", model);
+
+		}
+		*/
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	//--------------       LUNI        -----------------//
+
 	@RequestMapping(value = "employeeForm.htm")
 	public ModelAndView displayAddForm(Model model) throws SQLException {
 
@@ -75,22 +103,22 @@ public class EmployeeController {
 
 		EmployeeDAO edao = new EmployeeDAO();
 		Employee e = edao.getEmployeeById(employeeId);
-		model.addAttribute("employeeForm",e);
+		model.addAttribute("employeeForm", e);
 
 		return new ModelAndView("employee/edit", "model", model);
 	}
-	
-	@RequestMapping(value="editEmployee.htm", method=RequestMethod.POST)
-	public ModelAndView editEmployee(@ModelAttribute("editEmployee") Employee employee,ModelMap model,BindingResult result) {
-		
+
+	@RequestMapping(value = "editEmployee.htm", method = RequestMethod.POST)
+	public ModelAndView editEmployee(@ModelAttribute("editEmployee") Employee employee, ModelMap model,
+			BindingResult result) {
+
 		try {
-			EmployeeDAO edao= new EmployeeDAO();
+			EmployeeDAO edao = new EmployeeDAO();
 			edao.updateEmployee(employee);
-		}catch(Exception ex) {
+		} catch (Exception ex) {
 			ex.printStackTrace();
 		}
-		
-		
+
 		return new ModelAndView("redirect:/employee.htm");
 	}
 

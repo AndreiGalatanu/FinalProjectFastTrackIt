@@ -34,6 +34,10 @@ public class Employee {
 		// TODO Auto-generated constructor stub
 	}
 
+	public Employee(String nume, String prenume, String functie) {
+		// TODO Auto-generated constructor stub
+	}
+
 	public int getId() {
 		return id;
 	}

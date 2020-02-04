@@ -19,35 +19,37 @@
 	width: 100%;
 	padding: 10px;
 }
+
 ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  background-color: #4e73df;
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	background-color: #4e73df;
 }
 
 li {
-  float: center;
-   border-right: 1px solid #bbb;
+	float: center;
+	border-right: 1px solid #bbb;
 }
 
 li a {
-  display: block;
-  color: white;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-  width:100;
+	display: block;
+	color: white;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+	width: 100;
 }
 
 li a:hover {
-  background-color: #244bc2;
-  text-color: white;
+	background-color: #244bc2;
+	text-color: white;
 }
+
 li a.active {
-  color: white;
-  background-color: #4e73df;
+	color: white;
+	background-color: #4e73df;
 }
 </style>
 
@@ -68,10 +70,10 @@ li a.active {
 
 </head>
 <nav>
-<ul>
-  <li><a class="active" href="./employee.htm">Home</a></li>
- 
-</ul>
+	<ul>
+		<li><a class="active" href="./employee.htm">Home</a></li>
+
+	</ul>
 
 
 </nav>
@@ -136,10 +138,9 @@ li a.active {
 								<div class="form-group row">
 									<div class="col-sm-6 mb-3 mb-sm-0">
 										<input type="text" class="form-control form-control-user"
-											name="nrtelefon" id="nrtelefon"
-											placeholder="Numar Telefon">
+											name="nrtelefon" id="nrtelefon" placeholder="Numar Telefon">
 									</div>
-									
+
 
 
 
