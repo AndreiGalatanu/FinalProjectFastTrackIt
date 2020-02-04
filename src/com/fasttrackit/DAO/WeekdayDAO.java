@@ -5,7 +5,6 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
 import com.fasttrackit.DBHelper.DBHelper;
-import com.fasttrackit.pojo.Employee;
 import com.fasttrackit.pojo.zile.Luni;
 
 public class WeekdayDAO {

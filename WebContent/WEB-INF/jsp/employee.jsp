@@ -179,11 +179,16 @@
 
 
 												<td><a href="./detalii/${e.id}"
-													class="btn btn-primary btn-icon-split"> <span
+													class="btn btn-info btn-icon-split"> <span
 														class="icon text-white-50"> <i
 															class="fas fa-info-circle"></i>
-													</span> <span class="text">Detalii</span></a></td>
-
+													</span> <span class="text">Detalii</span></a>
+	<a href="deleteEmployee/${e.id}" 
+								onclick="return confirm('Sunteti sigur ca doriti sa stergeti aceasta intrare?')"
+								class="btn btn-danger btn-icon-split"> <span
+									class="icon text-white-50"> <i class="fas fa-trash-alt"></i>
+								</span> 
+								</a></td>
 											</tr>
 
 

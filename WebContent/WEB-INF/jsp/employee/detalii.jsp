@@ -199,10 +199,20 @@
 
 								<a
 									href="${pageContext.request.contextPath}/editEmployee/${model.employee.id }"
-									class="btn btn-primary btn-icon-split"> <span
+									class="btn btn-warning btn-icon-split"> <span
 									class="icon text-white-50"> <i class="fas fa-user-plus"></i>
 								</span> <span class="text">Editeaza</span>
 								</a>
+								<a
+									href="${pageContext.request.contextPath}/employee.htm"
+									class="btn btn-primary btn-icon-split"> <span
+									class="icon text-white-50"> <i class="fas fa-arrow-left"></i>
+								</span> <span class="text">Inapoi</span>
+								</a>
+								
+								
+							
+								
 
 
 

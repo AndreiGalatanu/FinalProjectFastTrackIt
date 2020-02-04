@@ -121,5 +121,20 @@ public class EmployeeController {
 
 		return new ModelAndView("redirect:/employee.htm");
 	}
+	@RequestMapping(value="deleteEmployee/{employeeId}")
+	public ModelAndView deleteEmployee(@PathVariable String employeeId,@ModelAttribute("employeeForm") Employee employee,
+			ModelMap model, BindingResult result) {
+		try {
+			EmployeeDAO edao=new EmployeeDAO();
+			edao.delete(edao.getEmployeeById(employeeId));
+			
+		} catch(Exception ex) {
+			ex.printStackTrace();
+		}
+		return new ModelAndView("redirect:/employee.htm");
+	}
+	
+	
+	
 
 }

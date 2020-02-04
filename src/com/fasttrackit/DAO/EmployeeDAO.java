@@ -237,13 +237,13 @@ public class EmployeeDAO {
 	
 	
 
-	public Employee getEmployeeById(String employeeID) throws SQLException {
+	public Employee getEmployeeById(String employeeId) throws SQLException {
 
 		Connection conn = DBHelper.getConnection();
 
 		String selectString = "select * from employee where id=?";
 		PreparedStatement stmt = conn.prepareStatement(selectString);
-		stmt.setString(1, employeeID);
+		stmt.setString(1, employeeId);
 		ResultSet rs = stmt.executeQuery();
 		Employee result = null;
 		if (rs.next()) {
